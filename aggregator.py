@@ -25,8 +25,13 @@ def top_posts(limit):
     top articles and their page views, sorted
     from most views to least.
     """
+    result = "The current Top Articles are: \n"
+    cursor.execute("select * from top_articles limit %s", (limit,))
+    top_articles = cursor.fetchall()
 
-    return limit
+    for article in top_articles:
+        result += article[0] + " -- " + str(article[1]) + " views\n"
+    return result
 
 
 def top_authors():
