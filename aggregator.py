@@ -1,5 +1,5 @@
 # aggregator.py
-# Data Analysis
+# News Data Analysis
 #
 # Works on the news database to provide an
 # analysis of the collected data that:
@@ -10,6 +10,11 @@
 
 import psycopg2
 
+DBNAME = "news"
+
+# Open a connection to the news database
+db = psycopg2.connect(database=DBNAME)
+cursor = db.cursor()
 
 def top_posts(limit):
 	"""
@@ -48,3 +53,6 @@ for result in [top_posts(3),
 			   top_authors(), 
 			   high_errors(1)]:
 	print(result)
+
+cursor.close()
+db.close()
