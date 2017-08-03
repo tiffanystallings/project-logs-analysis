@@ -9,12 +9,26 @@
 #   HTTP errors.
 
 import psycopg2
+from datetime import datetime
+
 
 DBNAME = "news"
 
 # Open a connection to the news database
 db = psycopg2.connect(database=DBNAME)
 cursor = db.cursor()
+
+
+def append_to_result(result, dataset):
+    """
+    A helper function that takes two inputs
+    Where result is the beginning of a result
+    string and dataset is a list of tuples from
+    the database.
+    """
+    for element in dataset:
+        result += element[0] + " -- " + str(element[1]) + " views\n"
+    return result
 
 
 def top_posts(limit):
@@ -26,12 +40,13 @@ def top_posts(limit):
     from most views to least.
     """
     result = "The current Top Articles are: \n"
+
+    # Accessing the top_articles view from the database
     cursor.execute("select * from top_articles limit %s", (limit,))
     top_articles = cursor.fetchall()
 
-    for article in top_articles:
-        result += article[0] + " -- " + str(article[1]) + " views\n"
-    return result
+    # Appending the data to result
+    return append_to_result(result, top_articles)
 
 
 def top_authors():
@@ -40,26 +55,29 @@ def top_authors():
     all authors sorted and their page views,
     sorted from most views to least.
     """
+    result = "The current Author Rankings are: \n"
 
-    return 0
+    # Accessing the top_authors view from the database
+    cursor.execute("select * from top_authors")
+    top_authors = cursor.fetchall()
+
+    # Appending the data to result
+    return append_to_result(result, top_authors)
 
 
-def high_errors(percent):
+def high_errors():
     """
-    Takes percent as input, where percent is an int
-    representing the error occurance percentage
-    to check for, and outputs a string containing
-    all dates where errors occured over at a
-    higher percent than the input, and the percentage
-    of errors for that day.
+    Takes no input, outputs a string containing
+    all dates where errors occured over 1% on all
+    views, and the percentage of errors for that day.
     """
 
-    return percent
+    return result
 
 # Print results to console
 for result in [top_posts(3),
                top_authors(),
-               high_errors(1)]:
+               high_errors()]:
     print(result)
 
 cursor.close()
