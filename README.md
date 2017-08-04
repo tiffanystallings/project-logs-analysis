@@ -67,4 +67,7 @@ From IDLE:
 5. The code should output to the IDLE shell.
 
 ## Contributions
+This project was built as part of Udacity's Full Stack Web Developer Nanodegree. It would be in violation of the honor code for me to accept any direct contributions to the code.
+
+However, if you have any advice or suggestions on how I might improve the code, please feel free to take out an Issue on the project's [github](https://github.com/tiffanystallings/project-logs-analysis).
 
