@@ -14,10 +14,14 @@ From a ZIP:
 3. Open the ZIP and click **Extract All**. Select your preferred  folder and hit **Extract**.
 
 ## Requirements
-* Python 3
+* [Python 3](https://www.python.org/downloads/)
 * Python Module - psycopg2
-* PostgreSQL
+* [PostgreSQL](https://www.postgresql.org/download/)
 * The SQL News database provided by Udacity
+
+Optional:
+* [Vagrant](https://www.vagrantup.com/downloads.html)
+* [Oracle VirtualBox VM](https://www.virtualbox.org/wiki/Downloads)
 
 ## Setup
 
