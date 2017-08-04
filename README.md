@@ -16,6 +16,7 @@ From a ZIP:
 ## Requirements
 * Python 3
 * Python Module - psycopg2
+* PostgreSQL
 * The SQL News database provided by Udacity
 
 ## Setup
