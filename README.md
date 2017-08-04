@@ -4,6 +4,15 @@ A simple Python script that utilizes a DB API to pull data from a local news dat
 
 ## Installation
 
+Using Git Bash:  
+`$ git clone https://github.com/tiffanystallings/project-logs-analysis.git`
+
+From a ZIP:  
+1. Visit the project's github [here](https://github.com/tiffanystallings/project-logs-analysis)
+2. Click the **Clone or Download** dropdown box and select  
+**Download ZIP**.
+3. Open the ZIP and click **Extract All**. Select your preferred  folder and hit **Extract**.
+
 ## Requirements
 
 ## Setup
