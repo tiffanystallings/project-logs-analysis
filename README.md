@@ -24,6 +24,18 @@ Optional:
 * [Oracle VirtualBox VM](https://www.virtualbox.org/wiki/Downloads)
 
 ## Setup
+### Installing psycopg2
+With Python3 installed, open your preferred comand line interface and enter:
+`pip install pyscopg2`
+
+### Initializing the Database
+With PostgreSQL installed, open your preferred command line interface (or a virtual machine using Vagrant and VirtualBox) and navigate to the project-logs-analysis directory.
+
+To initialize the database, enter:
+`psql -d news -f newsdata.sql`
+
+Once the News Database is initialized, open the database by entering:
+`psql news`
 
 ## Usage
 
