@@ -14,6 +14,9 @@ From a ZIP:
 3. Open the ZIP and click **Extract All**. Select your preferred  folder and hit **Extract**.
 
 ## Requirements
+* Python 3
+* Python Module - psycopg2
+* The SQL News database provided by Udacity
 
 ## Setup
 
