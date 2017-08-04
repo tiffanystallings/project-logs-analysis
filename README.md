@@ -53,6 +53,18 @@ Aggregator.py depends on three views to function. Create them by opening the dat
 ```
 
 ## Usage
+From the Command Line:
+With Python installed and all prior setup completed, open your preferred command line and navigate to the project-logs-analysis directory.
+Enter:
+`python aggregator.py`
+
+From IDLE:
+(With all prior setup completed)
+1. Open IDLE(Python 3._x_._x_)
+2. Select File -> Open...
+3. Navigate to the directory where project-logs-analysis is installed and open aggregator.py.
+4. A new window for aggregator.py will open. From that  window, select Run -> Run Module.
+5. The code should output to the IDLE shell.
 
 ## Contributions
 
