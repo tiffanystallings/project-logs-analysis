@@ -18,6 +18,7 @@ From a ZIP:
 * Python Module - psycopg2
 * [PostgreSQL](https://www.postgresql.org/download/)
 * The SQL News database provided by Udacity
+* Custom Views - Created in Setup below
 
 Optional:
 * [Vagrant](https://www.vagrantup.com/downloads.html)
@@ -36,6 +37,20 @@ To initialize the database, enter:
 
 Once the News Database is initialized, open the database by entering:
 `psql news`
+
+### Creating Required Views
+Aggregator.py depends on three views to function. Create them by opening the database in the command line and entering:
+```
+
+```
+
+```
+
+```
+
+```
+
+```
 
 ## Usage
 
