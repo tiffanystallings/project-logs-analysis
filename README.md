@@ -1,2 +1,14 @@
-# project-logs-analysis
-Utilizing a Python DB-API to aggregate data from a SQL database.
+# News Database Analysis
+
+A simple Python script that utilizes a DB API to pull data from a local news database.
+
+## Installation
+
+## Requirements
+
+## Setup
+
+## Usage
+
+## Contributions
+
