@@ -1,0 +1,16 @@
+Output of aggregator.py:
+
+vagrant@vagrant:/vagrant$ python aggregator.py
+The current Top Articles are:
+Candidate is jerk, alleges rival -- 338647 views
+Bears love berries, alleges bear -- 253801 views
+Bad things gone, say good people -- 170098 views
+
+The current Author Rankings are:
+Ursula La Multa -- 507594 views
+Rudolf von Treppenwitz -- 423457 views
+Anonymous Contributor -- 170098 views
+Markoff Chaney -- 84557 views
+
+The days at higher than 1% error rates:
+July 17, 2016 -- 2.26%
