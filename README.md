@@ -30,9 +30,11 @@ With Python3 installed, open your preferred comand line interface and enter:
 `pip install pyscopg2`
 
 ### Initializing the Database
-With PostgreSQL installed, open your preferred command line interface (or a virtual machine using Vagrant and VirtualBox) and navigate to the project-logs-analysis directory.
+My virtual machine was built using Vagrant and VirtualBox, utilizing Udacity's preset vagrant machine. You can get more information on their VM from [here](https://github.com/udacity/fullstack-nanodegree-vm)
 
-To initialize the database, enter:
+With your virtual machine set up (if preferred) and PostgreSQL installed, you can proceed with initializing the database.
+
+In your command line, enter:
 `psql -d news -f newsdata.sql`
 
 Once the News Database is initialized, open the database by entering:
