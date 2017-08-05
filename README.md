@@ -41,15 +41,40 @@ Once the News Database is initialized, open the database by entering:
 ### Creating Required Views
 Aggregator.py depends on three views to function. Create them by opening the database in the command line and entering:
 ```
-
+create view top_articles as
+select title, count(articles.slug) as views
+from articles, log
+where articles.slug = substring(log.path from 10 for char_length(log.path))
+group by articles.title
+order by views desc;
 ```
 
 ```
-
+create view top_authors as
+select name, count(articles.slug) as views
+from authors, articles, log
+where articles.slug = substring(log.path from 10 for char_length(log.path))
+and authors.id = articles.author
+group by authors.name
+order by views desc;
 ```
 
 ```
-
+create view high_errors as
+select date, round(num*100.0/total, 2) as percent
+from (
+select date(log.time) as date, count(log.time) as total, sub.num
+from log
+left join
+	(select date(log.time) as date, count(log.time) as num
+	 from log
+	 where status like '4%'
+	 or status like '5%'
+	 group by date(log.time)
+	) as sub
+on date(log.time)=sub.date
+group by date(log.time), sub.num) as calculated
+where num*1.0/total > 0.01;
 ```
 
 ## Usage
