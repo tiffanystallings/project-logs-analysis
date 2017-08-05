@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+#
 # aggregator.py
 # News Data Analysis
 #
@@ -71,6 +73,16 @@ def high_errors():
     all dates where errors occured over 1% on all
     views, and the percentage of errors for that day.
     """
+    result = "The days at higher than 1% error rates: \n"
+
+    # Accessing the high_errors view from the database
+    cursor.execute("select * from high_errors")
+    error_dates = cursor.fetchall()
+
+    # Formatting dates and appending to result
+    for day in error_dates:
+        result += day[0].strftime('%B %d, %Y') + (
+            ' -- ' + str(day[1]) + '% \n')
 
     return result
 
@@ -80,5 +92,6 @@ for result in [top_posts(3),
                high_errors()]:
     print(result)
 
+# Close the database connection
 cursor.close()
 db.close()
